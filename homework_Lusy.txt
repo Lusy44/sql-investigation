@@ -1,0 +1,179 @@
+/* SELECT * FROM homework1.user;  */
+ /*Example rus book  1-10 */
+/* 1) Trvac  toghum hashvel "a" qanak@... 
+ SELECT LENGTH(grqi_anun) - LENGTH(REPLACE(grqi_anun, 'a', '')) AS counT FROM homework1.gradaran;          */
+ 
+/* 2) Trvac  toghum poxel arajin ev verjin simbolner@ texerov
+  SELECT CONCAT(right(grqi_anun, 1), SUBSTRING(grqi_anun, 2, LENGTH(grqi_anun)-2), left(grqi_anun, 1)) swap FROM homework1.gradaran;  */
+  
+  /*3)arajin simboli tegh dnel  "bacat", verjini tegh@ "ket" 
+  SELECT insert(insert(grqi_anun, 1, 1, ' '), LENGTH(grqi_anun), 1, '.') as new_value6 from homework1.gradaran;*/
+  
+  /*4)jnjel arajin simbol@ 
+  SELECT right(grqi_anun, length(grqi_anun) - 1) as delete_first from homework1.gradaran; */
+  
+  /*5)Toxi verjum avelacnel '«»' */
+  -- SELECT concat(grqi_anun, '«»') as concat_last from homework1.gradaran; 
+   
+   /*6) Hashvel 0-9 tveri qanak@ 
+   6.1
+SELECT grqi_anun, length(grqi_anun) - length(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace
+(grqi_anun, '0', ''), '1', ''), '2', ''), '3', ''), '4', ''), '5', ''), '6', ''), '7', ''), '8', ''), '9', ''))
+as count1 FROM homework1.gradaran;   
+  6.2
+  SELECT length(regexp_replace(grqi_anun, '[^0-9]', '')) as dig_count1 FROM homework1.gradaran;  */
+  
+  /* 7) Stugel tox@ parunakum e tiv
+  SELECT length(grqi_anun) - length(replace(replace(replace(replace(replace(replace(replace(replace(replace(replace
+(grqi_anun, '0', ''), '1', ''), '2', ''), '3', ''), '4', ''), '5', ''), '6', ''), '7', ''), '8', ''), '9', '')) > 0 as count2 FROM homework1.gradaran; */
+  
+  /*8) Poxarinel 'bacat'  '«»'
+  SELECT replace(grqi_anun, ' ', '«»') as poxac FROM homework1.gradaran; */
+  
+  /*9) Jnjel verjin simbol@
+  9.1
+  SELECT grqi_anun, substring(grqi_anun, 1, LENGTH(grqi_anun) - 1) as last_sim FROM homework1.gradaran; 
+  
+  9.2
+  SELECT grqi_anun, left(grqi_anun, LENGTH(grqi_anun) - 1) as last FROM homework1.gradaran; */
+  
+  /* 10) Jnjel bolor "bacat" ner@
+  SELECT grqi_anun, replace(grqi_anun, ' ', '') as str FROM homework1.gradaran;*/
+  
+  /* 11) Jnjel 2 ev 4 simbolner@
+  SELECT grqi_anun, concat(left(grqi_anun, 1),substring(grqi_anun, 3, 1), substring(grqi_anun, 5, length(grqi_anun)))
+  as remove_index From homework1.gradaran; */
+  
+/* 13) Jnjel 1 bar@  stringic, barer@ bajanvum en " bacat" ov 
+SELECT grqi_anun,  substring(grqi_anun, locate(' ', grqi_anun, 1)) as split FROM homework1.gradaran; */
+
+/*14 -15) Hashvel keteri ev storaketeri qanak@
+SELECT grqi_anun, length(grqi_anun) - length(replace(replace(grqi_anun, ',', ''), '.', '')) as count from homework1.gradaran; */
+
+/*16)Trvac tox@ vercnel «» nshani mej
+SELECT grqi_anun, concat('«', grqi_anun, '»') AS merge FROM homework1.gradaran; */
+
+/*20) Gtnel arajin '*' simboli dirq@ 
+SELECT grqi_anun, locate('*', grqi_anun, 1) as find_index FROM homework1.gradaran;  */
+
+/*21) Jnjel amboxj togh@, toxnelov arajin ev verjin simbol@.... 
+SELECT grqi_anun, concat(left(grqi_anun, 1), right(grqi_anun, 1)) as delete_str FROM homework1.gradaran; */
+
+/*22) Voroshel '!'  ev '?' nshanneric vorn e aveli shat handipum.....  Mi qich poxac--> if chka :(  
+SELECT grqi_anun, length(grqi_anun) - length(replace(grqi_anun, '!', '')) as count_simbol_1,  
+                  length(grqi_anun) - length(replace(grqi_anun, '?', '')) as count_simbol_2  FROM homework1.gradaran; */
+                                 
+
+/*24) Amen mi ket gtneluc heto evs mek '.' avelacnel
+ SELECT grqi_anun, replace(grqi_anun, '.', '..')as add_simbol from homework1.gradaran; */
+ 
+ /*25) Amen mi ket gtneluc heto dni 'bacat' avelacnel
+ SELECT grqi_anun, replace(grqi_anun, '.', '. ')as add_simbol from homework1.gradaran; */
+ 
+ /*26) Amen mi '!' gtneluc heto poxarinel '?' avelacnel
+SELECT grqi_anun, replace(grqi_anun, "!", "?") as str FROM homework1.gradaran; */
+
+/*27) Voroshel parunakum e "bacat --> mi qich poxac if() hamar"
+SELECT grqi_anun, locate(' ', grqi_anun, 1) as prob FROM homework1.gradaran; */
+
+/*28)Hashvel  '-+' nshani qanak
+SELECT grqi_anun, length(grqi_anun) - length(replace(grqi_anun, '-+', '@')) as qanak FROM homework1.gradaran; */
+
+/*12 17, 19, 23, 29, 30 grac chi.... :(  */   
+
+/*1) Средний уровень ----------------------------------------------------------------------------------
+     Poxarinel irar hajordox pռobelner@ --> 1 probel ov
+SELECT grqi_anun, replace(grqi_anun, "   ", " ") as str  FROM homework1.gradaran; */
+
+/*2) Hashvel bareri qanak, voronq bajanvac en probelov
+SELECT grqi_anun, (LENGTH(grqi_anun) - LENGTH(replace(grqi_anun, " ", ""))) + 1 as str FROM homework1.gradaran; */
+
+/*3), 4), 16), 18), 21), 22), 23), 29) */
+
+/*5) Bari verjum avelacnel tvjal bari erkarutyun
+SELECT grqi_anun, CONCAT(grqi_anun, LENGTH(grqi_anun)) as con FROM homework1.gradaran; */
+
+/*6) Avelacnel amen "*" nshanic heto --> "<>" nshan" 
+SELECT grqi_anun, replace(grqi_anun, "*", "*<>") as con FROM homework1.gradaran; */
+
+/*7) Avelacnel amen "!" nshanic araj --> "," nshan" 
+SELECT grqi_anun, replace(grqi_anun, "!", ",!") as con FROM homework1.gradaran; */
+
+/*8) Trvac e 2 nuyn chapi togher. Stanal nor togh vortegh kent texer@ 1 toghic en, zuyg texer@ 2 toghic 
+SELECT CONCAT(left(grqi_anun, 1), left(hexinak, 1), SUBSTRING(grqi_anun, 2, 1), SUBSTRING(hexinak, 2, 1),
+               right(grqi_anun, 1), right(hexinak, 1)) as str FROM homework1.gradaran; */
+/*9) 1 probel@ ---> 2 probel 
+SELECT grqi_anun, replace(grqi_anun, " ", "  ") as con FROM homework1.gradaran; */
+
+/*10) Trvac togh@ shrjel
+SELECT grqi_anun, reverse(grqi_anun) as str FROM homework1.gradaran; */
+
+/*11) Trvac togh@ grel poqratarerov
+ SELECT LOWER(grqi_anun) as str FROM homework1.gradaran; */
+ 
+ /*12) Trvac togh@ grel mecatarerov 
+ SELECT UPPER(grqi_anun) as str FROM homework1.gradaran; */
+ 
+ /*13) Trvac toghum texerov poxel irar koxqi simbolner@ 
+ SELECT grqi_anun, CONCAT(substring(grqi_anun, 2, 1), substring(grqi_anun, 1, 1), substring(grqi_anun, 4, 1), substring(grqi_anun, 3, 1)) as str FROM homework1.gradaran;*/
+ 
+ /* 14) Jnjel arajin handipac " <> " nshan@ 
+SELECT grqi_anun, locate("*", grqi_anun) as str FROM homework1.gradaran; */
+
+/*15) Jnjel verjin handipac "  " probel@ 
+SELECT grqi_anun,  rtrim(grqi_anun)  as str FROM homework1.gradaran; /*????????? */
+
+/* 17) Poxarinel "N" --> "«номер по порядку"
+ SELECT grqi_anun, REPLACE (grqi_anun, "n", "«номер по порядку") as str FROM homework1.gradaran; */
+
+/* 19) Togh@ bajanel " " probelnerov
+1. SELECT grqi_anun, insert(grqi_anun, 2, 1, "a ") as str FROM homework1.gradaran;
+2. SELECT grqi_anun, concat(LEFT(grqi_anun, 3), " ", RIGTH(grqi_anun)) as str FROM homework1.gradaran; */
+
+/* 20) Poxarinel "-+" --> "0"
+ SELECT grqi_anun, REPLACE (grqi_anun, "-+", "0") as str FROM homework1.gradaran; */
+
+/*24)  Amen simbol ic heto grel ir index@
+Select grqi_anun, CONCAT(substring(grqi_anun, 1, 1), substring(grqi_anun, 3, 1), substring(grqi_anun, 5, 1)) as old,
+                 CONCAT(substring(grqi_anun, 2, 1), substring(grqi_anun, 4, 1), substring(grqi_anun, 6, 1)) as even  FROM homework1.gradaran; */
+  
+  /*25) Trvac e 2 togh--> nor togh mekumek dasavorvac 
+ Select grqi_anun, CONCAT(substring(grqi_anun, 1, 1), substring(hexinak, 2, 1), substring(grqi_anun, 3, 1), substring(hexinak, 4, 1)) 
+          as new_str FROM homework1.gradaran; */
+ 
+/* 26) Toghi ej amen baric heto grel tvyal bari erkarutyun@  
+ SELECT grqi_anun, CONCAT(substring_index(grqi_anun, " ", 1), LENGTH(substring_index(grqi_anun, " ", 1)), 
+                          substring_index(grqi_anun, " ", -1), LENGTH(substring_index(grqi_anun, " ", -1)))  as str FROM homework1.gradaran;  */
+        
+  /* 27)Durs berel naxaverji bar@ vor@ bajanvuma probelov       
+     SELECT grqi_anun, SUBSTRING_INDEX(SUBSTRING_INDEX(grqi_anun, " ", -2), " ", 1 )as str FROM homework1.gradaran; */  
+    
+  /* 28) kent qanakov probelner@ poxarinel 'T' isk zuyg qanakov@ 'H
+       SELECT grqi_anun, CONCAT(REPLACE(grqi_anun, " ", "T"), REPLACE(grqi_anun, " ", "H")) as str FROM homework1.gradaran;  ????  '*/  
+       
+     /* 30) "sin", "cos", "log" bareri verjum avelacnel ()  
+       SELECT grqi_anun, replace(replace(replace(grqi_anun, "sin", "()"), "cos", "()"), "log", "()") as str FROM homework1.gradaran; */
+    
+   /* Высокий уровень -------------------------------------------------------------------------------------------------------------------
+ /* 3) */
+ 
+ 
+ /* 1) Texerov poxel 1 ev verjin barer@ 
+   SELECT grqi_anun, CONCAT(SUBSTRING_INDEX(grqi_anun, ' ', -1),
+SUBSTRING(grqi_anun, LOCATE(' ', grqi_anun)+1, (LOCATE(SUBSTRING_INDEX(grqi_anun, ' ', -1),grqi_anun)-1) -LOCATE(' ', grqi_anun)-1),
+SUBSTRING_INDEX(grqi_anun, ' ', 1)) as yyy  from homework1.gradaran;   by  Lusin Martirosyan */
+   
+    /*2) Trvac e 2 togh... Stanal 3 togh@ vor kunena ayn simbolner@ voronq kan 2 togherum el     
+SELECT  CONCAT(left(grqi_anun, 1), left(hexinak, 1), right(grqi_anun, 1), right(hexinak, 1)) as str FROM homework1.gradaran; */
+
+/* 4) Poxarinel "*" nshan@  ir hamapatasxan indexov */
+ -- 4.1 SELECT grqi_anun, REPLACE(grqi_anun, "*", locate("*", grqi_anun)) as str FROM homework1.gradaran; // poxuma bolor@
+  
+  /*  4.2 SELECT grqi_anun, CONCAT(substring(grqi_anun, 1, locate("*", grqi_anun)-1),   
+                           locate("*", grqi_anun),
+	substring(grqi_anun, locate("*", grqi_anun)+1, length(substring_index(grqi_anun, "*", 2)) - locate("*", grqi_anun)), 
+		length(substring_index(grqi_anun, "*", 2))+1)    /.....  sharunakeli/     as str FROM homework1.gradaran;  */
+
+/* 5) nayel 4-rd xndir@....*/
+
+/* 6)  ?????  */
